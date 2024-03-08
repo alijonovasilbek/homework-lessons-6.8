@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week Days</title>
+    <style>
+        body {
+            color:#936c6c;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        a.button {
+            display: inline-block;
+            margin-top: 20px;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        a.button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="color:blue">Week Days in Different Languages</h1>
+
+    <table>
+        <tr>
+            <th>Day</th>
+            <th>French</th>
+            <th>Italian</th>
+            <th>Roman</th>
+            <th>Spanish</th>
+            <th>Portuguese</th>
+        </tr>
+        {% for day in jadvallar %}
+        <tr>
+            <td style="color: blue;">{{ day.1.1 }}</td>
+            <td>{{ day.french }}</td>
+            <td>{{ day.italian }}</td>
+            <td>{{ day.roman }}</td>
+            <td>{{ day.spanish }}</td>
+            <td>{{ day.portu }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <a class="button" href="{% url 'week_uz' %}">WEEK_UZ</a>
+    <a class="button" href="{% url 'week_ru' %}">WEEK_RU</a>
+    <a class="button" href="{% url 'week_en' %}">WEEK_EN</a>
+</body>
+</html>
